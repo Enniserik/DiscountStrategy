@@ -27,7 +27,15 @@ public class LineItem {
         this.discount = discount;
         this.extendedPrice = extendedPrice;
     }
-
+    
+    @Override
+    public String toString(){
+        double priceSubtotal = unitPrice * qty;
+        double discountSubtotal = discount * qty;
+        return description + "    " + qty + "   " + priceSubtotal + "   " + discountSubtotal + "    " +
+                (priceSubtotal - discountSubtotal);
+    }
+    
     public String getProductId() {
         return productId;
     }

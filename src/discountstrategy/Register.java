@@ -11,18 +11,24 @@ package discountstrategy;
  */
 public class Register {
     
-    Receipt receipt = new Receipt();
+    private Receipt receipt;
+    private FakeDatabase fd;
+
+    public Register(){
+        receipt = new Receipt();
+        fd = new FakeDatabase();
+    }
     
     public void startNewSale(String customerId){
-        // 
+        receipt.setCustomer(fd.getCustomer(customerId));
     }
     
     public void addItem(String productId, int qty){
-        // Send info to receipt
+        receipt.addItem(fd.getProduct(productId), qty);
     }
     
     public void endSaleAndPrintReceipt(){
-        // 
+        receipt.printReceipt();
     }
     
 }

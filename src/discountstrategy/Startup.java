@@ -24,6 +24,7 @@ public class Startup {
         
         // Adds items to the order
         r.addItem("11039", 2);
+        r.addItem("12045", 1);
         
         // Tells receipt to calculate totals and send to output
         r.endSaleAndPrintReceipt();
