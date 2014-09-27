@@ -12,11 +12,12 @@ package discountstrategy;
 public class FakeDatabase {
     
     // Array of customers
-    private Customer[] customers = {new Customer("A102", "Sarah Hills")};
+    private Customer[] customers = {new Customer("A102", "Sarah Hills"),
+                                    new Customer("B122", "Tyler Grubble")};
     
     // Array of products
-    private Product[] products = {new Product(new FlatDiscountStrategy(), "11039", "Black Socks", 6.99), 
-                                  new Product(new FlatDiscountStrategy(), "12045", "Baseball Cap", 13.99)};
+    private Product[] products = {new Product(new FlatDiscountStrategy(), "11039", "Black Socks", 6.99, 1.00), 
+                                  new Product(new FlatDiscountStrategy(), "12045", "Baseball Cap", 13.99, 2.00)};
     
     
     // Lookup Customer Id

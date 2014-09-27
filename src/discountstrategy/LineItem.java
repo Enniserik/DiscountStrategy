@@ -14,26 +14,23 @@ public class LineItem {
     // Stores info on each line item
     private String productId;
     private String description;
-    private double unitPrice;
+    private double price;
     private double qty;
     private double discount;
     private double extendedPrice;
 
-    public LineItem(String productId, String description, double unitPrice, double qty, double discount, double extendedPrice) {
+    public LineItem(String productId, String description, double unitPrice, double qty, double discount) {
         this.productId = productId;
         this.description = description;
-        this.unitPrice = unitPrice;
+        this.price = unitPrice;
         this.qty = qty;
         this.discount = discount;
-        this.extendedPrice = extendedPrice;
     }
     
     @Override
     public String toString(){
-        double priceSubtotal = unitPrice * qty;
-        double discountSubtotal = discount * qty;
-        return description + "    " + qty + "   " + priceSubtotal + "   " + discountSubtotal + "    " +
-                (priceSubtotal - discountSubtotal);
+        return description + "          " + qty + "   " + price + "   " + discount + "    " +
+                (price - discount);
     }
     
     public String getProductId() {
@@ -52,12 +49,12 @@ public class LineItem {
         this.description = description;
     }
 
-    public double getUnitPrice() {
-        return unitPrice;
+    public double getprice() {
+        return price;
     }
 
-    public void setUnitPrice(double unitPrice) {
-        this.unitPrice = unitPrice;
+    public void setprice(double price) {
+        this.price = price;
     }
 
     public double getQty() {

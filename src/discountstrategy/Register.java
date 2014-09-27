@@ -14,8 +14,8 @@ public class Register {
     private Receipt receipt;
     private FakeDatabase fd;
 
-    public Register(){
-        receipt = new Receipt();
+    public Register(Writer writer){
+        receipt = new Receipt(writer);
         fd = new FakeDatabase();
     }
     

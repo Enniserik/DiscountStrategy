@@ -9,8 +9,13 @@ package discountstrategy;
  *
  * @author Erik
  */
-public interface DiscountStrategy {
+public class ConsoleWriter implements Writer {
+
+    @Override
+    public void outputString(String s) {
+        System.out.println(s);
+    }
     
-    public abstract double getDiscountedPrice(double price, double discount);
+    
     
 }

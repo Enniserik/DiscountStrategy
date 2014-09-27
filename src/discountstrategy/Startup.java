@@ -18,9 +18,9 @@ public class Startup {
 
     public static void main(String[] args) {
         
-        Register r = new Register();
+        Register r = new Register(new ConsoleWriter());
         // Creates a receipt and sets the customer
-        r.startNewSale("A102");
+        r.startNewSale("B122");
         
         // Adds items to the order
         r.addItem("11039", 2);

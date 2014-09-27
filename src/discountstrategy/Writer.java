@@ -9,8 +9,8 @@ package discountstrategy;
  *
  * @author Erik
  */
-public interface DiscountStrategy {
+public interface Writer {
     
-    public abstract double getDiscountedPrice(double price, double discount);
+    public abstract void outputString(String s);
     
 }
