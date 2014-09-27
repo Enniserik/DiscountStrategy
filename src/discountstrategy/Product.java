@@ -11,6 +11,40 @@ package discountstrategy;
  */
 public class Product {
     
-    // Holds info for product
+    private String productId;
+    private String desc;
+    private double price;
+    
+    public Product(String productId, String desc, double price){
+        this.productId = productId;
+        this.desc = desc;
+        this.price = price;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
+    }
+    
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    
+    
     
 }

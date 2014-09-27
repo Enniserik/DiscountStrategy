@@ -12,9 +12,9 @@ package discountstrategy;
 public class FakeDatabase {
     
     // Array of customers
-    private Customer[] customers = {new Customer()};
+    private Customer[] customers = {new Customer("A102", "Sarah Hills")};
     
     // Array of products
-    private Product[] products = {new Product()};
+    private Product[] products = {new Product("11039", "Black Socks", 6.99)};
     
 }

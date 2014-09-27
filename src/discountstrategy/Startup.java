@@ -1,21 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package discountstrategy;
 
 /**
  *
  * @author Erik
  */
+
+/**
+ * TODO ----
+ * 1. Add Order between register and receipt 
+ * 2. Create Different types of customers (online, credit, cash), will affect output
+ * 3. 
+ * 
+ * 
+ * 
+ */
 public class Startup {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        Register r = new Register();
+        // Creates a receipt and sets the customer
+        r.startNewSale("A102");
+        
+        // Adds items to the order
+        r.addItem("11039", 2);
+        
+        // Tells receipt to calculate totals and send to output
+        r.endSaleAndPrintReceipt();
+        
     }
     
 }
