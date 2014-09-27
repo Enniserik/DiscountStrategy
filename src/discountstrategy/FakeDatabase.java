@@ -17,7 +17,8 @@ public class FakeDatabase {
     
     // Array of products
     private Product[] products = {new Product(new FlatDiscountStrategy(), "11039", "Black Socks", 6.99, 1.00), 
-                                  new Product(new FlatDiscountStrategy(), "12045", "Baseball Cap", 13.99, 2.00)};
+                                  new Product(new FlatDiscountStrategy(), "12045", "Baseball Cap", 13.99, 2.00),
+                                  new Product(new PercentDiscountStrategy(), "11078", "Vest", 29.99, 0.15)};
     
     
     // Lookup Customer Id
