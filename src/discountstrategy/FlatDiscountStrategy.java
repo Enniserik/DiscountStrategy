@@ -9,8 +9,11 @@ package discountstrategy;
  *
  * @author Erik
  */
-public interface DiscountStrategy {
+public class FlatDiscountStrategy implements DiscountStrategy {
     
-    public double getDiscountedPrice(double price, double discount);
+    @Override
+    public double getDiscountedPrice(double price, double discount){
+        return price - discount;
+    }
     
 }

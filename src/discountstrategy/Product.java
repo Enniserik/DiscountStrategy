@@ -14,11 +14,21 @@ public class Product {
     private String productId;
     private String desc;
     private double price;
+    private DiscountStrategy ds;
     
-    public Product(String productId, String desc, double price){
+    public Product(DiscountStrategy ds, String productId, String desc, double price){
+        this.ds = ds;
         this.productId = productId;
         this.desc = desc;
         this.price = price;
+    }
+
+    public DiscountStrategy getDs() {
+        return ds;
+    }
+
+    public void setDs(DiscountStrategy ds) {
+        this.ds = ds;
     }
 
     public String getProductId() {

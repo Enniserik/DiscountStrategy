@@ -14,4 +14,18 @@ public class Receipt {
     // Puts together line items and formats output
     // Sends output to output object
     
+    private LineItem[] items;
+    
+    public Receipt(){
+        items = new LineItem[0];
+    }
+    
+    public void addItem(){
+        
+    }
+    
+    public void printReceipt(){
+        
+    }
+    
 }
