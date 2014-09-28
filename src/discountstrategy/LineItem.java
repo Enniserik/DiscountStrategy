@@ -12,7 +12,6 @@ public class LineItem {
     private double price;
     private double qty;
     private double discount;
-    private double extendedPrice;
 
     public LineItem(String productId, String description, double unitPrice, double qty, double discount) {
         this.productId = productId;
@@ -67,15 +66,4 @@ public class LineItem {
     public void setDiscount(double discount) {
         this.discount = discount;
     }
-
-    public double getExtendedPrice() {
-        return extendedPrice;
-    }
-
-    public void setExtendedPrice(double extendedPrice) {
-        this.extendedPrice = extendedPrice;
-    }
-    
-    
-    
 }
