@@ -10,9 +10,6 @@ package discountstrategy;
  * 1. Add Order between register and receipt 
  * 2. Create Different types of customers (online, credit, cash), will affect output
  * 3. 
- * 
- * 
- * 
  */
 public class Startup {
 
@@ -28,6 +25,13 @@ public class Startup {
         r.addItem("11078", 1);
         
         // Tells receipt to calculate totals and send to output
+        r.endSaleAndPrintReceipt();
+        
+        r.startNewSale("A102");
+        
+        r.addItem("12045", 3);
+        r.addItem("11078", 2);
+        
         r.endSaleAndPrintReceipt();
         
     }

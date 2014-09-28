@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package discountstrategy;
 
 /**
@@ -11,24 +6,28 @@ package discountstrategy;
  */
 public class Register {
     
-    private Receipt receipt;
+    private Order order;
     private FakeDatabase fd;
+    private Writer writer;
 
     public Register(Writer writer){
-        receipt = new Receipt(writer);
+        this.writer = writer;
         fd = new FakeDatabase();
     }
     
     public void startNewSale(String customerId){
-        receipt.setCustomer(fd.getCustomer(customerId));
+        order = new Order(fd.getCustomer(customerId));
+        //receipt = new Receipt(writer);
+        //receipt.setCustomer(fd.getCustomer(customerId));
     }
     
     public void addItem(String productId, int qty){
-        receipt.addItem(fd.getProduct(productId), qty);
+        order.addItem(fd.getProduct(productId), qty);
+        //receipt.addItem(fd.getProduct(productId), qty);
     }
     
     public void endSaleAndPrintReceipt(){
-        receipt.printReceipt();
+        order.printReceipt(writer);
     }
     
 }
