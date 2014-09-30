@@ -6,8 +6,8 @@ package discountstrategy;
  */
 public interface Customer {
     
-    public String getCustomerInfo();
-    public String getCustomerId();
-    public void setCustomerId(String customerId);
+    public abstract String getCustomerInfo();
+    public abstract String getCustomerId();
+    public abstract void setCustomerId(String customerId);
 
 }
