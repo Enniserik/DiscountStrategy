@@ -29,6 +29,9 @@ public class Product {
     }
 
     public void setDiscount(double discount) {
+        if(discount < 0){
+            throw new NullPointerException("Discount must be at least 0.");
+        }
         this.discount = discount;
     }
 
@@ -37,6 +40,9 @@ public class Product {
     }
 
     public void setDs(DiscountStrategy ds) {
+        if(ds == null){
+            throw new NullPointerException("DiscountStrategy object must not be null.");
+        }
         this.ds = ds;
     }
 
@@ -45,6 +51,9 @@ public class Product {
     }
 
     public void setProductId(String productId) {
+        if(productId == null || productId.equals("")){
+            throw new NullPointerException("Product Id is invalid.");
+        }
         this.productId = productId;
     }
     
@@ -53,6 +62,9 @@ public class Product {
     }
 
     public void setDesc(String desc) {
+        if(desc == null || desc.equals("")){
+            throw new NullPointerException("Description is invalid.");
+        }
         this.desc = desc;
     }
 
@@ -61,6 +73,9 @@ public class Product {
     }
 
     public void setUnitPrice(double unitPrice) {
+        if(discount < 0){
+            throw new NullPointerException("Unit price must be at least 0.");
+        }
         this.unitPrice = unitPrice;
     }
     

@@ -33,6 +33,9 @@ public class CreditCustomer implements Customer{
 
     @Override
     public void setCustomerId(String customerId) {
+        if(customerId == null || customerId.equals("")){
+            throw new NullPointerException("Invalid customer Id.");
+        }
         this.customerId = customerId;
     }
 
@@ -41,6 +44,9 @@ public class CreditCustomer implements Customer{
     }
 
     public void setFirstName(String firstName) {
+        if(customerId == null || customerId.equals("")){
+            throw new NullPointerException("Invalid first name.");
+        }
         this.firstName = firstName;
     }
 
@@ -49,6 +55,9 @@ public class CreditCustomer implements Customer{
     }
 
     public void setLastName(String lastName) {
+        if(customerId == null || customerId.equals("")){
+            throw new NullPointerException("Invalid last name.");
+        }
         this.lastName = lastName;
     }
 

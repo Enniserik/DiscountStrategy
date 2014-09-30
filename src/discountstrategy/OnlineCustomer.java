@@ -26,11 +26,15 @@ public class OnlineCustomer implements Customer {
 
     @Override
     public String getCustomerId() {
+        
         return customerId;
     }
 
     @Override
     public void setCustomerId(String customerId) {
+        if(customerId == null || customerId.equals("")){
+            throw new NullPointerException("Invalid customer Id.");
+        }
         this.customerId = customerId;
     }
 
@@ -39,6 +43,9 @@ public class OnlineCustomer implements Customer {
     }
 
     public void setUserName(String userName) {
+        if(customerId == null || customerId.equals("")){
+            throw new NullPointerException("Invalid username.");
+        }
         this.userName = userName;
     }
     

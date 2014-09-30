@@ -29,6 +29,9 @@ public class CashCustomer implements Customer {
 
     @Override
     public void setCustomerId(String customerId) {
+        if(customerId == null || customerId.equals("")){
+            throw new NullPointerException("Invalid customer Id.");
+        }
         this.customerId = customerId;
     }
 

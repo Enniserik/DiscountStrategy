@@ -1,5 +1,7 @@
 package discountstrategy;
 
+import java.text.NumberFormat;
+
 /**
  *
  * @author Erik
@@ -10,10 +12,10 @@ public class LineItem {
     private String productId;
     private String description;
     private double price;
-    private double qty;
+    private int qty;
     private double discount;
 
-    public LineItem(String productId, String description, double unitPrice, double qty, double discount) {
+    public LineItem(String productId, String description, double unitPrice, int qty, double discount) {
         this.productId = productId;
         this.description = description;
         this.price = unitPrice;
@@ -21,49 +23,48 @@ public class LineItem {
         this.discount = discount;
     }
     
-    @Override
-    public String toString(){
-        return description + "          " + qty + "   " + price + "   " + discount + "    " +
-                (price - discount);
+    public String toString(String format, NumberFormat nf){
+        return String.format(format, description, qty, nf.format(price), nf.format(discount), nf.format(price - discount));
+//        return description + "      " + qty + "       " + price + "      " + discount + "      " + (price - discount);
     }
-    
-    public String getProductId() {
-        return productId;
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public double getprice() {
+//    
+//    public String getProductId() {
+//        return productId;
+//    }
+//
+//    public void setProductId(String productId) {
+//        this.productId = productId;
+//    }
+//
+//    public String getDescription() {
+//        return description;
+//    }
+//
+//    public void setDescription(String description) {
+//        this.description = description;
+//    }
+//
+    public double getPrice() {
         return price;
     }
-
-    public void setprice(double price) {
-        this.price = price;
-    }
-
-    public double getQty() {
-        return qty;
-    }
-
-    public void setQty(double qty) {
-        this.qty = qty;
-    }
-
+//
+//    public void setPrice(double price) {
+//        this.price = price;
+//    }
+//
+//    public double getQty() {
+//        return qty;
+//    }
+//
+//    public void setQty(double qty) {
+//        this.qty = qty;
+//    }
+//
     public double getDiscount() {
         return discount;
     }
-
-    public void setDiscount(double discount) {
-        this.discount = discount;
-    }
+//
+//    public void setDiscount(double discount) {
+//        this.discount = discount;
+//    }
 }

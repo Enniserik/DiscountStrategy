@@ -37,6 +37,9 @@ public class Order {
     }
 
     public void setReceipt(Receipt receipt) {
+        if(receipt == null){
+            throw new NullPointerException("Receipt must not be null.");
+        }
         this.receipt = receipt;
     }
 
@@ -45,6 +48,9 @@ public class Order {
     }
 
     public void setCustomer(Customer customer) {
+        if(customer == null){
+            throw new NullPointerException("Customer must not be null.");
+        }
         this.customer = customer;
     }
     
