@@ -1,7 +1,9 @@
 package discountstrategy;
 
 /**
- * 
+ * This class is a dummy database that stores Customer and Product arrays. 
+ * Provides methods to find a Customer or Product object based on a customerId 
+ * or productId.
  * 
  * @author Erik Ennis enniserik@gmail.com
  * @version 1.00
@@ -20,7 +22,13 @@ public class FakeDatabase implements DataAccessStrategy {
                                   new Product(new PercentDiscountStrategy(), "14222", "Top Hat", 17.99, 0.10)};
     
     
-    // Lookup Customer Id
+    /**
+     * Finds a Customer object in the array based on a String argument.
+     * @param customerId - String to compare
+     * @throws NullPointerException if Customer object is not found.
+     * @return - returns a Customer object
+     */
+    @Override
     public Customer getCustomer(String customerId){
         
         for(Customer c : customers){
@@ -33,7 +41,13 @@ public class FakeDatabase implements DataAccessStrategy {
     }
     
     
-    // Lookup Product Id
+    /**
+     * Finds a Product object in the array based on a String argument.
+     * @param productId - String to compare
+     * @throws NullPointerException if Product object is not found.
+     * @return - returns a Product object
+     */
+    @Override
     public Product getProduct(String productId){
         
         for(Product p : products){

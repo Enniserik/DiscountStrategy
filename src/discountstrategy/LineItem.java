@@ -3,7 +3,8 @@ package discountstrategy;
 import java.text.NumberFormat;
 
 /**
- * 
+ * This class stores information for a Line Item in a retail environment.
+ * Provides access to a formatted String through the toString() method.
  * 
  * @author Erik Ennis enniserik@gmail.com
  * @version 1.00
@@ -28,9 +29,9 @@ public class LineItem {
     /**
      * Creates a formatted String using the LineItem properties and returns 
      * that String.
-     * @param format
-     * @param nf
-     * @return 
+     * @param format - String for String.format()
+     * @param nf - NumberFormat object
+     * @return - returns a formatted String
      */
     public String toString(String format, NumberFormat nf){
         return String.format(format, description, qty, nf.format(price), nf.format(discount), nf.format(price - discount));

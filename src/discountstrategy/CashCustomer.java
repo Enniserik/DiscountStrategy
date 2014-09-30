@@ -1,10 +1,8 @@
 package discountstrategy;
 
 /**
- * 
- * 
- * 
- * 
+ * This class implements the Customer interface and stores information about
+ * the customer (for an Cash customer).
  * 
  * @author Erik Ennis enniserik@gmail.com
  * @version 1.00
@@ -27,6 +25,11 @@ public class CashCustomer implements Customer {
         return customerId;
     }
 
+    /**
+     * Stores the customer id.
+     * @param customerId - Customer Id to store.
+     * @throws IllegalArgumentException if customerId is null or empty
+     */
     @Override
     public void setCustomerId(String customerId) {
         if(customerId == null || customerId.isEmpty()){

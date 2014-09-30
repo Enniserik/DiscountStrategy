@@ -1,7 +1,8 @@
 package discountstrategy;
 
 /**
- * 
+ * This class stores information about a Product, provides getters and setters
+ * for all properties.
  * 
  * @author Erik Ennis enniserik@gmail.com
  * @version 1.00
@@ -29,7 +30,12 @@ public class Product {
     public double getDiscount() {
         return discount;
     }
-
+    
+    /**
+     * Stores the discount
+     * @param discount - double to store
+     * @throws IllegalArgumentException if discount is below 0.
+     */
     public void setDiscount(double discount) {
         if(discount < 0){
             throw new IllegalArgumentException("Discount must be at least 0.");
@@ -40,7 +46,12 @@ public class Product {
     public DiscountStrategy getDs() {
         return ds;
     }
-
+    
+    /**
+     * Stores the DiscountStrategy object
+     * @param ds - DiscountStrategy object to store
+     * @throws NullPointerException if argument is null
+     */
     public void setDs(DiscountStrategy ds) {
         if(ds == null){
             throw new NullPointerException("DiscountStrategy object must not be null.");
@@ -51,7 +62,12 @@ public class Product {
     public String getProductId() {
         return productId;
     }
-
+    
+    /**
+     * Stores the productId String
+     * @param productId - String to store
+     * @throws IllegalArgumentException if productId is null or empty
+     */
     public void setProductId(String productId) {
         if(productId == null || productId.isEmpty()){
             throw new IllegalArgumentException("Product Id is invalid.");
@@ -63,6 +79,11 @@ public class Product {
         return desc;
     }
 
+    /**
+     * Stores the description String
+     * @param desc - String to store
+     * @throws IllegalArgumentException if description is null or empty
+     */
     public void setDesc(String desc) {
         if(desc == null || desc.isEmpty()){
             throw new IllegalArgumentException("Description is invalid.");
@@ -73,7 +94,12 @@ public class Product {
     public double getUnitPrice() {
         return unitPrice;
     }
-
+    
+    /**
+     * Stores the unitPrice
+     * @param unitPrice - double to store
+     * @throws IllegalArgumentException if unitPrice is below 0.
+     */
     public void setUnitPrice(double unitPrice) {
         if(discount < 0){
             throw new IllegalArgumentException("Unit price must be at least 0.");

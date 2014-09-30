@@ -1,7 +1,8 @@
 package discountstrategy;
 
 /**
- * 
+ * This class implements the Customer interface and stores information about
+ * the customer (for an Credit card customer).
  * 
  * @author Erik Ennis enniserik@gmail.com
  * @version 1.00
@@ -27,7 +28,12 @@ public class CreditCustomer implements Customer{
     public String getCustomerId() {
         return customerId;
     }
-
+    
+    /**
+     * Stores the customer id.
+     * @param customerId - Customer Id to store.
+     * @throws IllegalArgumentException if customerId is null or empty
+     */
     @Override
     public void setCustomerId(String customerId) {
         if(customerId == null || customerId.isEmpty()){
@@ -39,7 +45,12 @@ public class CreditCustomer implements Customer{
     public String getFirstName() {
         return firstName;
     }
-
+    
+    /**
+     * Stores the first name.
+     * @param firstName - First Name to store.
+     * @throws IllegalArgumentException if firstName is null or empty
+     */
     public void setFirstName(String firstName) {
         if(firstName == null || firstName.isEmpty()){
             throw new IllegalArgumentException("Invalid first name.");
@@ -51,6 +62,11 @@ public class CreditCustomer implements Customer{
         return lastName;
     }
 
+    /**
+     * Stores the customer last name.
+     * @param lastName - Last Name to store.
+     * @throws IllegalArgumentException if lastName is null or empty
+     */
     public void setLastName(String lastName) {
         if(lastName == null || lastName.isEmpty()){
             throw new IllegalArgumentException("Invalid last name.");

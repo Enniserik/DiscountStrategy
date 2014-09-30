@@ -1,7 +1,8 @@
 package discountstrategy;
 
 /**
- * 
+ * This class implements the Customer interface and stores information about
+ * the customer (for an Online customer).
  * 
  * @author Erik Ennis enniserik@gmail.com
  * @version 1.00
@@ -27,6 +28,11 @@ public class OnlineCustomer implements Customer {
         return customerId;
     }
 
+    /**
+     * Stores the customer id.
+     * @param customerId - Customer Id to store.
+     * @throws IllegalArgumentException if customerId is null or empty
+     */
     @Override
     public void setCustomerId(String customerId) {
         if(customerId == null || customerId.isEmpty()){
@@ -39,6 +45,11 @@ public class OnlineCustomer implements Customer {
         return userName;
     }
 
+    /**
+     * Stores the customer username.
+     * @param userName - Customer username to store.
+     * @throws IllegalArgumentException if userName is null or empty
+     */
     public void setUserName(String userName) {
         if(userName == null || userName.isEmpty()){
             throw new IllegalArgumentException("Invalid username.");

@@ -1,7 +1,7 @@
 package discountstrategy;
 
 /**
- * 
+ * Creates a Register object and handles all input.
  * 
  * @author Erik Ennis enniserik@gmail.com
  * @version 1.00
@@ -10,7 +10,7 @@ public class Startup {
 
     public static void main(String[] args) {
         
-        Register r = new Register(new ConsoleReceiptOutput());
+        Register r = new Register(new ConsoleReceiptOutput(), new FakeDatabase());
         
         // Sale 1
         // Creates a receipt and sets the customer
