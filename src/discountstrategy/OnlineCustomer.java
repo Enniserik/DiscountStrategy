@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package discountstrategy;
 
 /**
- *
- * @author Erik
+ * 
+ * 
+ * @author Erik Ennis enniserik@gmail.com
+ * @version 1.00
  */
 public class OnlineCustomer implements Customer {
     
@@ -32,8 +29,8 @@ public class OnlineCustomer implements Customer {
 
     @Override
     public void setCustomerId(String customerId) {
-        if(customerId == null || customerId.equals("")){
-            throw new NullPointerException("Invalid customer Id.");
+        if(customerId == null || customerId.isEmpty()){
+            throw new IllegalArgumentException("Invalid customer Id.");
         }
         this.customerId = customerId;
     }
@@ -43,8 +40,8 @@ public class OnlineCustomer implements Customer {
     }
 
     public void setUserName(String userName) {
-        if(customerId == null || customerId.equals("")){
-            throw new NullPointerException("Invalid username.");
+        if(userName == null || userName.isEmpty()){
+            throw new IllegalArgumentException("Invalid username.");
         }
         this.userName = userName;
     }

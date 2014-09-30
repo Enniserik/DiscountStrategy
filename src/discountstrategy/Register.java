@@ -1,16 +1,18 @@
 package discountstrategy;
 
 /**
- *
- * @author Erik
+ * 
+ * 
+ * @author Erik Ennis enniserik@gmail.com
+ * @version 1.00
  */
 public class Register {
     
     private Order order;
     private FakeDatabase fd;
-    private Writer writer;
+    private ReceiptOutput writer;
 
-    public Register(Writer writer){
+    public Register(ReceiptOutput writer){
         this.writer = writer;
         fd = new FakeDatabase();
     }

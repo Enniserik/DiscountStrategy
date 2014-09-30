@@ -1,10 +1,12 @@
 package discountstrategy;
 
 /**
- *
- * @author Erik
+ * 
+ * 
+ * @author Erik Ennis enniserik@gmail.com
+ * @version 1.00
  */
-public class FakeDatabase {
+public class FakeDatabase implements DataAccessStrategy {
     
     // Array of customers
     private Customer[] customers = {new CashCustomer("A102"),

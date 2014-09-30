@@ -4,10 +4,12 @@ import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author Erik
+ * 
+ * 
+ * @author Erik Ennis enniserik@gmail.com
+ * @version 1.00
  */
-public class GUIWriter implements Writer {
+public class GUIReceiptOutput implements ReceiptOutput {
     
     @Override
     public void outputString(String s) {

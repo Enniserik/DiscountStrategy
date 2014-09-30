@@ -1,10 +1,15 @@
 package discountstrategy;
 
 /**
- *
- * @author Erik
+ * 
+ * 
+ * 
+ * 
+ * 
+ * @author Erik Ennis enniserik@gmail.com
+ * @version 1.00
  */
-public class ConsoleWriter implements Writer {
+public class ConsoleReceiptOutput implements ReceiptOutput {
 
     @Override
     public void outputString(String s) {

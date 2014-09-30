@@ -1,8 +1,10 @@
 package discountstrategy;
 
 /**
- *
- * @author Erik
+ * 
+ * 
+ * @author Erik Ennis enniserik@gmail.com
+ * @version 1.00
  */
 public class Product {
     
@@ -30,7 +32,7 @@ public class Product {
 
     public void setDiscount(double discount) {
         if(discount < 0){
-            throw new NullPointerException("Discount must be at least 0.");
+            throw new IllegalArgumentException("Discount must be at least 0.");
         }
         this.discount = discount;
     }
@@ -51,8 +53,8 @@ public class Product {
     }
 
     public void setProductId(String productId) {
-        if(productId == null || productId.equals("")){
-            throw new NullPointerException("Product Id is invalid.");
+        if(productId == null || productId.isEmpty()){
+            throw new IllegalArgumentException("Product Id is invalid.");
         }
         this.productId = productId;
     }
@@ -62,8 +64,8 @@ public class Product {
     }
 
     public void setDesc(String desc) {
-        if(desc == null || desc.equals("")){
-            throw new NullPointerException("Description is invalid.");
+        if(desc == null || desc.isEmpty()){
+            throw new IllegalArgumentException("Description is invalid.");
         }
         this.desc = desc;
     }
@@ -74,7 +76,7 @@ public class Product {
 
     public void setUnitPrice(double unitPrice) {
         if(discount < 0){
-            throw new NullPointerException("Unit price must be at least 0.");
+            throw new IllegalArgumentException("Unit price must be at least 0.");
         }
         this.unitPrice = unitPrice;
     }

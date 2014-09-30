@@ -3,8 +3,10 @@ package discountstrategy;
 import java.text.NumberFormat;
 
 /**
- *
- * @author Erik
+ * 
+ * 
+ * @author Erik Ennis enniserik@gmail.com
+ * @version 1.00
  */
 public class LineItem {
     
@@ -23,6 +25,13 @@ public class LineItem {
         this.discount = discount;
     }
     
+    /**
+     * Creates a formatted String using the LineItem properties and returns 
+     * that String.
+     * @param format
+     * @param nf
+     * @return 
+     */
     public String toString(String format, NumberFormat nf){
         return String.format(format, description, qty, nf.format(price), nf.format(discount), nf.format(price - discount));
 //        return description + "      " + qty + "       " + price + "      " + discount + "      " + (price - discount);

@@ -3,16 +3,27 @@ package discountstrategy;
 import java.text.NumberFormat;
 
 /**
- *
- * @author Erik
+ * This class builds and formats a String and sends it to a ReceiptOutput object
+ * for output.
+ * 
+ * @author Erik Ennis enniserik@gmail.com
+ * @version 1.00
  */
 public class Receipt {
 
     public Receipt(){
 
     }
-
-    public void printReceipt(Writer writer, Customer customer, LineItem[] items){
+    
+    /**
+     * Creates and formats a String based on Customer and LineItem[] array
+     * that are passed in. Also delegates the actual printing of the String
+     * to the ReceiptOutput object.
+     * @param writer
+     * @param customer
+     * @param items 
+     */
+    public void printReceipt(ReceiptOutput writer, Customer customer, LineItem[] items){
         String format = "%-20s %-15s %-15s %-15s %-15s%n";
         String formattedReceipt = "Kohl's Department Store\n" + customer.getCustomerInfo() + "\n\n";
         double grandTotal = 0;

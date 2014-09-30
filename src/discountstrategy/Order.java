@@ -1,13 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package discountstrategy;
 
 /**
- *
- * @author Erik
+ * 
+ * 
+ * 
+ * 
+ * 
+ * @author Erik Ennis enniserik@gmail.com
+ * @version 1.00
  */
 public class Order {
     
@@ -28,7 +28,7 @@ public class Order {
         items = temp;
     }
 
-    public void printReceipt(Writer writer){
+    public void printReceipt(ReceiptOutput writer){
         receipt.printReceipt(writer, customer, items);
     }
 
