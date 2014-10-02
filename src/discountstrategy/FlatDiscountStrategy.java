@@ -13,9 +13,14 @@ public class FlatDiscountStrategy implements DiscountStrategy {
      * @param price - Product price for calculation
      * @param discount - Discount price for calculation
      * @return - returns the discounted price as a double
+     * @throws IllegalArgumentException if price or discount are below .01.
      */
     @Override
     public double getDiscountedPrice(double price, double discount){
+        if(price < .01 || discount < .01){
+            throw new IllegalArgumentException("Price and discount must be at least"
+                    + ".01.");
+        }
         return discount;
     }
     

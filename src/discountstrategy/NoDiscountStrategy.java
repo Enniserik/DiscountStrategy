@@ -13,9 +13,13 @@ public class NoDiscountStrategy implements DiscountStrategy {
      * @param price - Product price for calculation
      * @param discount - Discount price for calculation
      * @return - returns the discounted price as a double
+     * @throws IllegalArgumentException if price is less than 0.
      */
     @Override
     public double getDiscountedPrice(double price, double discount) {
+        if(price <= 0){
+            throw new IllegalArgumentException("Price must be greater than 0.");
+        }
         return price;
     }
     
