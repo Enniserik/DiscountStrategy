@@ -15,6 +15,6 @@ public interface DiscountStrategy {
      * @param discount - Discount price for calculation
      * @return - returns the discounted price as a double
      */
-    public abstract double getDiscountedPrice(double price, double discount);
+    public abstract double getDiscountAmount(double price, double discount);
     
 }

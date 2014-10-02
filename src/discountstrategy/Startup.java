@@ -22,12 +22,12 @@ public class Startup {
         r.endSaleAndPrintReceipt(new ConsoleReceiptOutput());
         
         // Sale 2
-        r.startNewSale("A102");
-        
-        r.addItem("11078", 2);
-        r.addItem("12045", 3); 
-        
-        r.endSaleAndPrintReceipt(new ConsoleReceiptOutput());
+//        r.startNewSale("A102");
+//        
+//        r.addItem("11078", 2);
+//        r.addItem("12045", 3); 
+//        
+//        r.endSaleAndPrintReceipt(new ConsoleReceiptOutput());
 //        
 //        // Sale 3
 //        r.startNewSale("A165");
@@ -35,7 +35,7 @@ public class Startup {
 //        r.addItem("14222", 1);
 //        r.addItem("15432", 2);
 //        
-//        r.endSaleAndPrintReceipt(new ConsoleReceiptOutput());
+//        r.endSaleAndPrintReceipt(new GUIReceiptOutput());
         
     }
     

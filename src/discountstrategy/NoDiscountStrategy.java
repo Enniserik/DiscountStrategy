@@ -15,7 +15,7 @@ public class NoDiscountStrategy implements DiscountStrategy {
      * @return - returns the discounted price as a double
      */
     @Override
-    public double getDiscountedPrice(double price, double discountAmount) {
+    public double getDiscountAmount(double price, double discountAmount) {
         return 0;
     }
     

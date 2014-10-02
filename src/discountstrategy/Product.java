@@ -23,8 +23,8 @@ public class Product {
         this.discount = discount;
     }
     
-    public double getDiscountedPrice(){
-        return ds.getDiscountedPrice(unitPrice, discount);
+    public double getDiscountAmount(){
+        return ds.getDiscountAmount(unitPrice, discount);
     }
 
     public double getDiscount() {

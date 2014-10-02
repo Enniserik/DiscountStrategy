@@ -23,7 +23,7 @@ public class Receipt {
      * @param customer
      * @param items 
      */
-    public void printReceipt(ReceiptOutput writer, Customer customer, LineItem[] items){
+    public void printReceipt(ReceiptOutput writer, CustomerStrategy customer, LineItem[] items){
         String format = "%-20s %-15s %-15s %-15s %-20s%n";
         String formattedReceipt = "Kohl's Department Store\n" + customer.getCustomerInfo() + "\n\n";
         double grandTotal = 0;

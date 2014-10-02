@@ -13,7 +13,7 @@ public interface DataAccessStrategy {
      * @param customerId - String to compare
      * @return - returns a Customer object
      */
-    public Customer getCustomer(String customerId);
+    public CustomerStrategy getCustomer(String customerId);
     
     /**
      * Provides a template for finding a Product object

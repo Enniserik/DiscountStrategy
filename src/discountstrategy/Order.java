@@ -10,10 +10,10 @@ package discountstrategy;
 public class Order {
     
     private Receipt receipt;
-    private Customer customer;
+    private CustomerStrategy customer;
     private LineItem[] items;
     
-    public Order(Customer customer){
+    public Order(CustomerStrategy customer){
         items = new LineItem[0];
         receipt = new Receipt();
         this.customer = customer;
@@ -27,7 +27,7 @@ public class Order {
     public void addItem(Product p, int qty){
         LineItem[] temp = new LineItem[items.length + 1];
         System.arraycopy(items, 0, temp, 0, items.length);
-        temp[items.length] = new LineItem(p.getProductId(), p.getDesc(), p.getUnitPrice() * qty, qty, p.getDiscountedPrice() * qty);
+        temp[items.length] = new LineItem(p.getProductId(), p.getDesc(), p.getUnitPrice() * qty, qty, p.getDiscountAmount() * qty);
         items = temp;
     }
 
@@ -59,7 +59,7 @@ public class Order {
         this.receipt = receipt;
     }
 
-    public Customer getCustomer() {
+    public CustomerStrategy getCustomer() {
         return customer;
     }
     
@@ -68,7 +68,7 @@ public class Order {
      * @param customer - Customer object to store.
      * @throws NullPointerException if argument is null
      */
-    public void setCustomer(Customer customer) {
+    public void setCustomer(CustomerStrategy customer) {
         if(customer == null){
             throw new NullPointerException("Customer must not be null.");
         }

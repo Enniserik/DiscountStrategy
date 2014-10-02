@@ -7,7 +7,7 @@ package discountstrategy;
  * @author Erik Ennis enniserik@gmail.com
  * @version 1.00
  */
-public class CreditCustomer implements Customer{
+public class CreditCustomer implements CustomerStrategy{
     
     private String customerId;
     private String firstName;

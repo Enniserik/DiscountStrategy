@@ -11,7 +11,7 @@ package discountstrategy;
 public class FakeDatabase implements DataAccessStrategy {
     
     // Array of customers
-    private Customer[] customers = {new CashCustomer("A102"),
+    private CustomerStrategy[] customers = {new CashCustomer("A102"),
                                     new OnlineCustomer("B122", "tgrubble112"),
                                     new CreditCustomer("A165", "Sarah", "Hills")};
     
@@ -30,9 +30,9 @@ public class FakeDatabase implements DataAccessStrategy {
      * @return - returns a Customer object
      */
     @Override
-    public Customer getCustomer(String customerId){
+    public CustomerStrategy getCustomer(String customerId){
         
-        for(Customer c : customers){
+        for(CustomerStrategy c : customers){
             if(c.getCustomerId().equals(customerId)){
                 return c;
             }

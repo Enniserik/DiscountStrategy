@@ -6,7 +6,7 @@ package discountstrategy;
  * @author Erik Ennis enniserik@gmail.com
  * @version 1.00
  */
-public interface Customer {
+public interface CustomerStrategy {
     
     public abstract String getCustomerInfo();
     public abstract String getCustomerId();
