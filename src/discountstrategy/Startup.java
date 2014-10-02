@@ -10,18 +10,15 @@ public class Startup {
 
     public static void main(String[] args) {
         
-        Register r = new Register(new GUIReceiptOutput(), new FakeDatabase());
+        Register r = new Register(new ConsoleReceiptOutput(), new FakeDatabase());
         
         // Sale 1
-        // Creates a receipt and sets the customer
         r.startNewSale("B122");
         
-        // Adds items to the order
         r.addItem("11039", 2);
         r.addItem("12045", 1);
         r.addItem("11078", 1);
         
-        // Tells receipt to calculate totals and send to output
         r.endSaleAndPrintReceipt();
         
         // Sale 2
@@ -36,6 +33,7 @@ public class Startup {
 //        r.startNewSale("A165");
 //        
 //        r.addItem("14222", 1);
+//        r.addItem("15432", 2);
 //        
 //        r.endSaleAndPrintReceipt();
         

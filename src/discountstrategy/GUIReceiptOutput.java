@@ -2,6 +2,8 @@ package discountstrategy;
 
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 /**
  * This class implements ReceiptOutput and overrides the outputString method.
