@@ -1,6 +1,9 @@
 package discountstrategy;
 
+import java.text.DateFormat;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * This class builds and formats a String and sends it to a ReceiptOutput object
@@ -10,9 +13,11 @@ import java.text.NumberFormat;
  * @version 1.00
  */
 public class Receipt {
-
+    
+    Date date;
+    
     public Receipt(){
-
+        date = new Date();
     }
     
     /**
@@ -25,11 +30,13 @@ public class Receipt {
      */
     public void printReceipt(ReceiptOutput writer, CustomerStrategy customer, LineItem[] items){
         String format = "%-20s %-15s %-15s %-15s %-20s%n";
-        String formattedReceipt = "Kohl's Department Store\n" + customer.getCustomerInfo() + "\n\n";
+        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        String formattedReceipt = "Kohl's Department Store\n" + customer.getCustomerInfo() + "\n";
         double grandTotal = 0;
         
         NumberFormat nf = NumberFormat.getCurrencyInstance();
         
+        formattedReceipt += dateFormat.format(date) + "\n\n";
         formattedReceipt += String.format(format, "Description", "Quantity", "Price", "Discount", "Ext Price");
         formattedReceipt += "------------------------------------------------------------------------------\n";
         for(LineItem li : items){
