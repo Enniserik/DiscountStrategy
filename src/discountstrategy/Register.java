@@ -12,10 +12,8 @@ public class Register {
     
     private Order order;
     private DataAccessStrategy das;
-    private ReceiptOutput writer;
 
-    public Register(ReceiptOutput writer, DataAccessStrategy das){
-        this.writer = writer;
+    public Register(DataAccessStrategy das){
         this.das = das;
     }
     
@@ -44,7 +42,7 @@ public class Register {
         //receipt.addItem(fd.getProduct(productId), qty);
     }
 
-    public void endSaleAndPrintReceipt(){
+    public void endSaleAndPrintReceipt(ReceiptOutput writer){
         order.printReceipt(writer);
     }
     

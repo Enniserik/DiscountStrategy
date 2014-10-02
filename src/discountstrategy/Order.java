@@ -27,7 +27,7 @@ public class Order {
     public void addItem(Product p, int qty){
         LineItem[] temp = new LineItem[items.length + 1];
         System.arraycopy(items, 0, temp, 0, items.length);
-        temp[items.length] = new LineItem(p.getProductId(), p.getDesc(), p.getUnitPrice() * qty, qty, p.getDiscountAmount() * qty);
+        temp[items.length] = new LineItem(p.getProductId(), p.getDesc(), p.getUnitPrice() * qty, qty, p.getDiscountedPrice() * qty);
         items = temp;
     }
 

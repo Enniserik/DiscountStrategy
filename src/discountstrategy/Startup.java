@@ -10,7 +10,7 @@ public class Startup {
 
     public static void main(String[] args) {
         
-        Register r = new Register(new ConsoleReceiptOutput(), new FakeDatabase());
+        Register r = new Register(new FakeDatabase());
         
         // Sale 1
         r.startNewSale("B122");
@@ -19,15 +19,15 @@ public class Startup {
         r.addItem("12045", 1);
         r.addItem("11078", 1);
         
-        r.endSaleAndPrintReceipt();
+        r.endSaleAndPrintReceipt(new ConsoleReceiptOutput());
         
         // Sale 2
-//        r.startNewSale("A102");
-//        
-//        r.addItem("12045", 3);
-//        r.addItem("11078", 2);
-//        
-//        r.endSaleAndPrintReceipt();
+        r.startNewSale("A102");
+        
+        r.addItem("11078", 2);
+        r.addItem("12045", 3); 
+        
+        r.endSaleAndPrintReceipt(new ConsoleReceiptOutput());
 //        
 //        // Sale 3
 //        r.startNewSale("A165");
@@ -35,7 +35,7 @@ public class Startup {
 //        r.addItem("14222", 1);
 //        r.addItem("15432", 2);
 //        
-//        r.endSaleAndPrintReceipt();
+//        r.endSaleAndPrintReceipt(new ConsoleReceiptOutput());
         
     }
     

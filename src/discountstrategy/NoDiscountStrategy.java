@@ -11,11 +11,11 @@ public class NoDiscountStrategy implements DiscountStrategy {
     /**
      * Calculates a discounted price based on arguments.
      * @param price - Product price for calculation
-     * @param discount - Discount price for calculation
+     * @param discountAmount - Discount price for calculation
      * @return - returns the discounted price as a double
      */
     @Override
-    public double getDiscountedPrice(double price, double discount) {
+    public double getDiscountedPrice(double price, double discountAmount) {
         return 0;
     }
     
