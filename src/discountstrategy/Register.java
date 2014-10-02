@@ -34,8 +34,12 @@ public class Register {
      * on productId. Passes Product object and qty to addItem method.
      * @param productId - String to pass to DataAccessStrategy object
      * @param qty - quantity of Product
+     * @throws IllegalArgumentException if qty is less than 1.
      */
     public void addItem(String productId, int qty){
+        if(qty < 1){
+            throw new IllegalArgumentException("Quantity must be at least 1.");
+        }
         order.addItem(das.getProduct(productId), qty);
         //receipt.addItem(fd.getProduct(productId), qty);
     }

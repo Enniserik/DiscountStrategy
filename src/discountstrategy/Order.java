@@ -23,12 +23,8 @@ public class Order {
      * Adds a new LineItem object to the LineItem[] array
      * @param p - Product object 
      * @param qty - quantity of product
-     * @throws IllegalArgumentException if qty is less than 1.
      */
     public void addItem(Product p, int qty){
-        if(qty < 1){
-            throw new IllegalArgumentException("Quantity must be at least 1.");
-        }
         LineItem[] temp = new LineItem[items.length + 1];
         System.arraycopy(items, 0, temp, 0, items.length);
         temp[items.length] = new LineItem(p.getProductId(), p.getDesc(), p.getUnitPrice() * qty, qty, p.getDiscountAmount() * qty);

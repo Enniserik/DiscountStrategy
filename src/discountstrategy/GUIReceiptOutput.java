@@ -18,10 +18,11 @@ public class GUIReceiptOutput implements ReceiptOutput {
      */
     @Override
     public void outputString(String s) {
-        JDialog dialog = new JOptionPane(s).createDialog("GUIReceiptOutput");
-        dialog.setAlwaysOnTop(true);
-        dialog.setVisible(true);
-        dialog.dispose();
+//        JDialog dialog = new JOptionPane(s).createDialog("GUIReceiptOutput");
+//        dialog.setAlwaysOnTop(true);
+//        dialog.setVisible(true);
+//        dialog.dispose();
+        JOptionPane.showMessageDialog(null, s);
     }
     
 }
