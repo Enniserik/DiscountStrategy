@@ -36,11 +36,11 @@ public class Order {
      * @param writer - ReceiptOutput object to use
      * @throws NullPointerException if ReceiptOutput argument is null.
      */
-    public void printReceipt(ReceiptOutput writer){
+    public void printReceipt(ReceiptOutput writer, double taxRate){
         if(writer == null){
             throw new NullPointerException("ReceiptOutput object must not be null.");
         }
-        receipt.printReceipt(writer, customer, items);
+        receipt.printReceipt(writer, customer, items, taxRate);
     }
 
     public Receipt getReceipt() {

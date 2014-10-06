@@ -23,6 +23,8 @@ public class FakeDatabase implements DataAccessStrategy {
                                   new Product(new NoDiscountStrategy(), "15432", "Gloves", 19.99, 0)};
     
     
+    
+    private double taxRate = 0.05;
     /**
      * Finds a Customer object in the array based on a String argument.
      * @param customerId - String to compare
@@ -58,6 +60,11 @@ public class FakeDatabase implements DataAccessStrategy {
         }
         
         throw new NullPointerException("There is no product with that Id.");
+    }
+    
+    @Override
+    public double getTaxRate(){
+        return taxRate;
     }
     
 }

@@ -28,11 +28,11 @@ public class Receipt {
      * @param customer
      * @param items 
      */
-    public void printReceipt(ReceiptOutput writer, CustomerStrategy customer, LineItem[] items){
+    public void printReceipt(ReceiptOutput writer, CustomerStrategy customer, LineItem[] items, double taxRate){
         String format = "%-20s %-15s %-15s %-15s %-20s%n";
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
         String formattedReceipt = "Kohl's Department Store\n" + customer.getCustomerInfo() + "\n";
-        double grandTotal = 0;
+        double subTotal = 0;
         
         NumberFormat nf = NumberFormat.getCurrencyInstance();
         
@@ -41,9 +41,11 @@ public class Receipt {
         formattedReceipt += "------------------------------------------------------------------------------\n";
         for(LineItem li : items){
             formattedReceipt += li.toString(format, nf) + "\n";
-            grandTotal += (li.getPrice() - li.getDiscount());
+            subTotal += (li.getPrice() - li.getDiscount());
         }
-        formattedReceipt += String.format(format, "", "", "", "Total:", nf.format(grandTotal));
+        formattedReceipt += String.format(format, "", "", "", "SubTotal:", nf.format(subTotal));
+        formattedReceipt += String.format(format, "", "", "", "Tax:", nf.format(subTotal * taxRate));
+        formattedReceipt += String.format(format, "", "", "", "Total:", nf.format(subTotal + (subTotal * taxRate)));
         formattedReceipt += "Thank you for shopping at Kohl's!\n";
         writer.outputString(formattedReceipt);
     }

@@ -43,7 +43,7 @@ public class Register {
     }
 
     public void endSaleAndPrintReceipt(ReceiptOutput writer){
-        order.printReceipt(writer);
+        order.printReceipt(writer, das.getTaxRate());
     }
     
 }

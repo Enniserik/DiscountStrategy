@@ -18,6 +18,7 @@ public class Startup {
         r.addItem("11039", 2);
         r.addItem("12045", 1);
         r.addItem("11078", 1);
+        r.addItem("11078", 1);
         
         r.endSaleAndPrintReceipt(new ConsoleReceiptOutput());
         

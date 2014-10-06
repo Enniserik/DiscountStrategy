@@ -22,4 +22,7 @@ public interface DataAccessStrategy {
      */
     public Product getProduct(String productId);
     
+    
+    public double getTaxRate();
+    
 }
