@@ -13,14 +13,23 @@ public class Startup {
         Register r = new Register(new FakeDatabase());
         
         // Sale 1
-        r.startNewSale("B122");
+        try{
+            
+            r.startNewSale("B122");
+            r.addItem("11039", 2);
+            r.addItem("12045", 1);
+            r.addItem("11078", 1);
+            r.addItem("11078", 1);
+            r.endSaleAndPrintReceipt(new ConsoleReceiptOutput());
+            
+        } catch(IllegalArgumentException e){
+            
+            System.out.println(e.getMessage());
+            
+        }
         
-        r.addItem("11039", 2);
-        r.addItem("12045", 1);
-        r.addItem("11078", 1);
-        r.addItem("11078", 1);
         
-        r.endSaleAndPrintReceipt(new ConsoleReceiptOutput());
+        
         
         // Sale 2
 //        r.startNewSale("A102");

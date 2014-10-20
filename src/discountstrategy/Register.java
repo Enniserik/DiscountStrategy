@@ -21,8 +21,8 @@ public class Register {
      * Creates a new Order object and looks up the Customer based on customerId
      * @param customerId - String to pass to DataAccessStrategy object
      */
-    public void startNewSale(String customerId){
-        order = new Order(das.getCustomer(customerId));
+    public void startNewSale(String customerId) throws IllegalArgumentException {
+            order = new Order(das.getCustomer(customerId));
         //receipt = new Receipt(writer);
         //receipt.setCustomer(fd.getCustomer(customerId));
     }
@@ -34,7 +34,7 @@ public class Register {
      * @param qty - quantity of Product
      * @throws IllegalArgumentException if qty is less than 1.
      */
-    public void addItem(String productId, int qty){
+    public void addItem(String productId, int qty) throws IllegalArgumentException {
         if(qty < 1){
             throw new IllegalArgumentException("Quantity must be at least 1.");
         }
@@ -42,7 +42,7 @@ public class Register {
         //receipt.addItem(fd.getProduct(productId), qty);
     }
 
-    public void endSaleAndPrintReceipt(ReceiptOutput writer){
+    public void endSaleAndPrintReceipt(ReceiptOutput writer) throws IllegalArgumentException {
         order.printReceipt(writer, das.getTaxRate());
     }
     

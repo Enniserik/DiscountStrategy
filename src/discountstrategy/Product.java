@@ -36,7 +36,7 @@ public class Product {
      * @param discount - double to store
      * @throws IllegalArgumentException if discount is below 0.
      */
-    public void setDiscount(double discount) {
+    public void setDiscount(double discount) throws IllegalArgumentException {
         if(discount < 0){
             throw new IllegalArgumentException("Discount must be at least 0.");
         }
@@ -52,9 +52,9 @@ public class Product {
      * @param ds - DiscountStrategy object to store
      * @throws NullPointerException if argument is null
      */
-    public void setDs(DiscountStrategy ds) {
+    public void setDs(DiscountStrategy ds) throws IllegalArgumentException {
         if(ds == null){
-            throw new NullPointerException("DiscountStrategy object must not be null.");
+            throw new IllegalArgumentException("DiscountStrategy object must not be null.");
         }
         this.ds = ds;
     }
@@ -68,7 +68,7 @@ public class Product {
      * @param productId - String to store
      * @throws IllegalArgumentException if productId is null or empty
      */
-    public void setProductId(String productId) {
+    public void setProductId(String productId) throws IllegalArgumentException {
         if(productId == null || productId.isEmpty()){
             throw new IllegalArgumentException("Product Id is invalid.");
         }
@@ -84,7 +84,7 @@ public class Product {
      * @param desc - String to store
      * @throws IllegalArgumentException if description is null or empty
      */
-    public void setDesc(String desc) {
+    public void setDesc(String desc) throws IllegalArgumentException {
         if(desc == null || desc.isEmpty()){
             throw new IllegalArgumentException("Description is invalid.");
         }
@@ -100,7 +100,7 @@ public class Product {
      * @param unitPrice - double to store
      * @throws IllegalArgumentException if unitPrice is below 0.
      */
-    public void setUnitPrice(double unitPrice) {
+    public void setUnitPrice(double unitPrice) throws IllegalArgumentException {
         if(discount < 0){
             throw new IllegalArgumentException("Unit price must be at least 0.");
         }

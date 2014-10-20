@@ -32,7 +32,7 @@ public class FakeDatabase implements DataAccessStrategy {
      * @return - returns a Customer object
      */
     @Override
-    public CustomerStrategy getCustomer(String customerId){
+    public CustomerStrategy getCustomer(String customerId) throws IllegalArgumentException {
         
         for(CustomerStrategy c : customers){
             if(c.getCustomerId().equals(customerId)){
@@ -40,7 +40,7 @@ public class FakeDatabase implements DataAccessStrategy {
             }
         }
         
-        throw new NullPointerException("There is no customer with that Id.");
+        throw new IllegalArgumentException("There is no customer with that Id.");
     }
     
     
@@ -51,7 +51,7 @@ public class FakeDatabase implements DataAccessStrategy {
      * @return - returns a Product object
      */
     @Override
-    public Product getProduct(String productId){
+    public Product getProduct(String productId) throws IllegalArgumentException{
         
         for(Product p : products){
             if(p.getProductId().equals(productId)){
@@ -59,7 +59,7 @@ public class FakeDatabase implements DataAccessStrategy {
             }
         }
         
-        throw new NullPointerException("There is no product with that Id.");
+        throw new IllegalArgumentException("There is no product with that Id.");
     }
     
     @Override

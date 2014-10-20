@@ -35,7 +35,7 @@ public class CreditCustomer implements CustomerStrategy{
      * @throws IllegalArgumentException if customerId is null or empty
      */
     @Override
-    public void setCustomerId(String customerId) {
+    public void setCustomerId(String customerId) throws IllegalArgumentException {
         if(customerId == null || customerId.isEmpty()){
             throw new IllegalArgumentException("Invalid customer Id.");
         }
@@ -51,7 +51,7 @@ public class CreditCustomer implements CustomerStrategy{
      * @param firstName - First Name to store.
      * @throws IllegalArgumentException if firstName is null or empty
      */
-    public void setFirstName(String firstName) {
+    public void setFirstName(String firstName) throws IllegalArgumentException {
         if(firstName == null || firstName.isEmpty()){
             throw new IllegalArgumentException("Invalid first name.");
         }

@@ -31,7 +31,7 @@ public class CashCustomer implements CustomerStrategy {
      * @throws IllegalArgumentException if customerId is null or empty
      */
     @Override
-    public void setCustomerId(String customerId) {
+    public void setCustomerId(String customerId) throws IllegalArgumentException {
         if(customerId == null || customerId.isEmpty()){
             throw new IllegalArgumentException("Invalid customer Id.");
         }

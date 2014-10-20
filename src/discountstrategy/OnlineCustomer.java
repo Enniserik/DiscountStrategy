@@ -34,7 +34,7 @@ public class OnlineCustomer implements CustomerStrategy {
      * @throws IllegalArgumentException if customerId is null or empty
      */
     @Override
-    public void setCustomerId(String customerId) {
+    public void setCustomerId(String customerId) throws IllegalArgumentException {
         if(customerId == null || customerId.isEmpty()){
             throw new IllegalArgumentException("Invalid customer Id.");
         }
@@ -50,7 +50,7 @@ public class OnlineCustomer implements CustomerStrategy {
      * @param userName - Customer username to store.
      * @throws IllegalArgumentException if userName is null or empty
      */
-    public void setUserName(String userName) {
+    public void setUserName(String userName) throws IllegalArgumentException {
         if(userName == null || userName.isEmpty()){
             throw new IllegalArgumentException("Invalid username.");
         }

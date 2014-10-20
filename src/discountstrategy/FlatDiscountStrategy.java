@@ -16,7 +16,7 @@ public class FlatDiscountStrategy implements DiscountStrategy {
      * @throws IllegalArgumentException if price or discountAmount are below .01.
      */
     @Override
-    public double getDiscountAmount(double price, double discountAmount){
+    public double getDiscountAmount(double price, double discountAmount) throws IllegalArgumentException {
         if(price < .01 || discountAmount < .01){
             throw new IllegalArgumentException("Price and discount must be at least"
                     + ".01.");

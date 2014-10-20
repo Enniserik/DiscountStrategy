@@ -34,9 +34,9 @@ public class LineItem {
      * @return - returns a formatted String
      * @throws NullPointerException if format or nf are null or empty
      */
-    public String toString(String format, NumberFormat nf){
+    public String toString(String format, NumberFormat nf) throws IllegalArgumentException {
         if(nf == null || format == null || format.isEmpty()){
-            throw new NullPointerException("NumberFormat and String arguments"
+            throw new IllegalArgumentException("NumberFormat and String arguments"
                     + "must not be null or empty.");
         }
         return String.format(format, description, qty, nf.format(price), nf.format(discount), nf.format(price - discount));

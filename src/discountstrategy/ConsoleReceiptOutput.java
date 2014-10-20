@@ -15,9 +15,9 @@ public class ConsoleReceiptOutput implements ReceiptOutput {
      * @throws NullPointerException if s is null or empty
      */
     @Override
-    public void outputString(String s) {
+    public void outputString(String s) throws IllegalArgumentException {
         if(s == null || s.isEmpty()){
-            throw new NullPointerException("A null or empty string is not valid.");
+            throw new IllegalArgumentException("A null or empty string is not valid.");
         }
         System.out.println(s);
     }

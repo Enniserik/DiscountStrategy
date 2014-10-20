@@ -16,7 +16,7 @@ public class PercentDiscountStrategy implements DiscountStrategy {
      * @throws IllegalArgumentException if price or discountRate are below .01.
      */
     @Override
-    public double getDiscountAmount(double price, double discountRate) {
+    public double getDiscountAmount(double price, double discountRate) throws IllegalArgumentException {
         if(price < .01 || discountRate < .01){
             throw new IllegalArgumentException("Price and discount must be at least"
                     + ".01.");

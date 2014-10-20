@@ -36,9 +36,9 @@ public class Order {
      * @param writer - ReceiptOutput object to use
      * @throws NullPointerException if ReceiptOutput argument is null.
      */
-    public void printReceipt(ReceiptOutput writer, double taxRate){
+    public void printReceipt(ReceiptOutput writer, double taxRate) throws IllegalArgumentException {
         if(writer == null){
-            throw new NullPointerException("ReceiptOutput object must not be null.");
+            throw new IllegalArgumentException("ReceiptOutput object must not be null.");
         }
         receipt.printReceipt(writer, customer, items, taxRate);
     }
@@ -52,9 +52,9 @@ public class Order {
      * @param receipt - Receipt object to store.
      * @throws NullPointerException if argument is null
      */
-    public void setReceipt(Receipt receipt) {
+    public void setReceipt(Receipt receipt) throws IllegalArgumentException {
         if(receipt == null){
-            throw new NullPointerException("Receipt must not be null.");
+            throw new IllegalArgumentException("Receipt must not be null.");
         }
         this.receipt = receipt;
     }
@@ -68,9 +68,9 @@ public class Order {
      * @param customer - Customer object to store.
      * @throws NullPointerException if argument is null
      */
-    public void setCustomer(CustomerStrategy customer) {
+    public void setCustomer(CustomerStrategy customer) throws IllegalArgumentException {
         if(customer == null){
-            throw new NullPointerException("Customer must not be null.");
+            throw new IllegalArgumentException("Customer must not be null.");
         }
         this.customer = customer;
     }
